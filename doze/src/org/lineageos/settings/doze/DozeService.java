@@ -32,7 +32,6 @@ public class DozeService extends Service {
     private ProximitySensor mProximitySensor;
     private TiltSensor mTiltSensor;
     private AmdSensor mAmdSensor;
-    private FODProxCheck mFODProxCheck;
 
     private BroadcastReceiver mScreenStateReceiver = new BroadcastReceiver() {
         @Override
@@ -51,7 +50,6 @@ public class DozeService extends Service {
         mProximitySensor = new ProximitySensor(this);
         mTiltSensor = new TiltSensor(this);
         mAmdSensor = new AmdSensor(this);
-        mFODProxCheck = new FODProxCheck(this);
 
         IntentFilter screenStateFilter = new IntentFilter();
         screenStateFilter.addAction(Intent.ACTION_SCREEN_ON);
@@ -73,7 +71,6 @@ public class DozeService extends Service {
         mProximitySensor.disable();
         mTiltSensor.disable();
         mAmdSensor.disable();
-        mFODProxCheck.disable();
     }
 
     @Override
@@ -92,10 +89,6 @@ public class DozeService extends Service {
         if (DozeUtils.isPocketGestureEnabled(this)) {
             mProximitySensor.disable();
         }
-        if (DozeUtils.isFODWakeEnabled(this)) {
-            mFODProxCheck.disable();
-            mFODProxCheck.tapcheck();
-        }
     }
 
     private void onDisplayOff() {
@@ -108,9 +101,6 @@ public class DozeService extends Service {
         }
         if (DozeUtils.isPocketGestureEnabled(this)) {
             mProximitySensor.enable();
-        }
-        if (DozeUtils.isFODWakeEnabled(this)) {
-            mFODProxCheck.enable();
         }
     }
 }
