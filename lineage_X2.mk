@@ -16,6 +16,9 @@ PRODUCT_BRAND := realme
 PRODUCT_MODEL := realme X2
 PRODUCT_MANUFACTURER := realme
 
+# Bootanimation Resolution
+TARGET_BOOT_ANIMATION_RES := 1080
+
 BUILD_FINGERPRINT := "google/redfin/redfin:11/RQ2A.210405.005/7181113:user/release-keys"
 
 PRODUCT_GMS_CLIENTID_BASE := android-oppo
