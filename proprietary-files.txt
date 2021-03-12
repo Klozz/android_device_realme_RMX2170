@@ -135,6 +135,11 @@ product/framework/qcrilhook.jar
 # Telephony (qti-telephony-common) - from DRG - QKQ1.190828.002
 product/framework/qti-telephony-common.jar|b4d187700f279cdbd40e74b4c3be4504f10d8b29
 
+# Usb
+vendor/bin/hw/android.hardware.usb@1.0-service:bin/hw/android.hardware.usb@1.0-service
+vendor/etc/init/android.hardware.usb@1.0-service.rc:etc/init/android.hardware.usb@1.0-service.rc
+vendor/lib64/android.hardware.usb@1.0.so:lib64/android.hardware.usb@1.0.so
+
 # WiFi Display
 bin/wfdservice
 etc/init/wfdservice.rc
