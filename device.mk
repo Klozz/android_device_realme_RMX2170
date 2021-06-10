@@ -13,11 +13,13 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
 # Get non-open-source specific aspects
-$(call inherit-product, vendor/realme/X2/X2-vendor.mk)
+$(call inherit-product, vendor/realme/RMX2170/RMX2170-vendor.mk)
 
-# VNDK
-PRODUCT_TARGET_VNDK_VERSION := 29
-PRODUCT_EXTRA_VNDK_VERSIONS := 29
+# API
+PRODUCT_BUILD_SUPER_PARTITION := false
+PRODUCT_SHIPPING_API_LEVEL := 29
+PRODUCT_TARGET_VNDK_VERSION := 30
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2340
@@ -43,9 +45,9 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # Privapp Whitelist
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/privapp-permissions-X2.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-X2.xml \
-    $(LOCAL_PATH)/configs/privapp-permissions-X2.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-X2.xml \
-    $(LOCAL_PATH)/configs/privapp-permissions-X2.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-X2.xml
+    $(LOCAL_PATH)/configs/privapp-permissions-RMX2170.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-RMX2170.xml \
+    $(LOCAL_PATH)/configs/privapp-permissions-RMX2170.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-RMX2170.xml \
+    $(LOCAL_PATH)/configs/privapp-permissions-RMX2170.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-RMX2170.xml
     
 # AID/fs configs
 PRODUCT_PACKAGES += \
@@ -88,12 +90,16 @@ PRODUCT_PACKAGES += \
     RealmeProximityHelper 
     
 # RealmeParts
-$(call inherit-product, device/realme/X2/RealmeParts/parts.mk)    
+#$(call inherit-product, device/realme/X2/RealmeParts/parts.mk)    
+
+# Ramdisk
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/ramdisk/,$(TARGET_COPY_OUT_RAMDISK))
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service.x2 \
-    lineage.biometrics.fingerprint.inscreen@1.0-service.x2 \
+    android.hardware.biometrics.fingerprint@2.1-service.rmx2170 \
+    lineage.biometrics.fingerprint.inscreen@1.0-service.rmx2170 \
     vendor.oppo.hardware.biometrics.fingerprint@2.1
 
 # Fingerprint
@@ -169,7 +175,7 @@ PRODUCT_COPY_FILES += \
 
 # Sensors Hal
 PRODUCT_PACKAGES += \
-    android.hardware.sensors@1.0-impl.x2
+    android.hardware.sensors@1.0-impl.rmx2170
 
 # Sensors
 PRODUCT_COPY_FILES += \
@@ -181,7 +187,7 @@ PRODUCT_PACKAGES += \
     android.hardware.radio@1.4
 
 # Soong namespaces
-PRODUCT_BOARD_PLATFORM := sm6150
+PRODUCT_BOARD_PLATFORM := atoll
 PRODUCT_USES_QCOM_HARDWARE := true
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
@@ -211,7 +217,7 @@ PRODUCT_BOOT_JARS += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.x2
+    android.hardware.light@2.0-service.rmx2170
 
 # RCS
 PRODUCT_PACKAGES += \
@@ -221,4 +227,4 @@ PRODUCT_PACKAGES += \
 
 # Touch
 PRODUCT_PACKAGES += \
-    lineage.touch@1.0-service.x2
+    lineage.touch@1.0-service.rmx2170
