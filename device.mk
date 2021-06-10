@@ -76,7 +76,8 @@ PRODUCT_PACKAGES += \
     init.qcom.rc 
 
 PRODUCT_PACKAGES += \
-    fstab.qcom
+    fstab.default \
+    oplus.fstab
 
 # Display
 PRODUCT_PACKAGES += \
