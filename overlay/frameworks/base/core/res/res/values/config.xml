@@ -1199,4 +1199,7 @@
 
     <!-- Default fod pressed color -->
     <integer name="config_fod_pressed_color">0</integer>
+
+    <!-- Path to fast charging status file to detect whether an oem fast charger is active -->
+    <string name="config_oemFastChargerStatusPath" translatable="false">/sys/class/power_supply/battery/voocchg_ing</string>
 </resources>
