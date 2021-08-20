@@ -7,10 +7,10 @@
 $(call inherit-product, device/realme/RMX2170/device.mk)
 
 # Inherit some common Lineage stuff.
-$(call inherit-product, vendor/ssos/config/common_full_phone.mk)
+$(call inherit-product, vendor/xperience/config/common.mk)
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := ssos_RMX2170
+PRODUCT_NAME := xperience_RMX2170
 PRODUCT_DEVICE := RMX2170
 PRODUCT_BRAND := realme
 PRODUCT_MODEL := realme 7 Pro
@@ -42,7 +42,3 @@ ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.sys.disable_rescue=true
 endif
-
-# Inherit ShapeShiftOS common properties.
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.ssos.cpu=SD720G

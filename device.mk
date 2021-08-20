@@ -102,7 +102,7 @@ PRODUCT_COPY_FILES += \
 # Fingerprint
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service.RMX2170 \
-    lineage.biometrics.fingerprint.inscreen@1.0-service.RMX2170 \
+    xperience.biometrics.fingerprint.inscreen@1.0-service.RMX2170 \
     vendor.oplus.hardware.biometrics.fingerprint@2.1
 
 # Fingerprint
@@ -226,4 +226,4 @@ PRODUCT_PACKAGES += \
 
 # Touch
 PRODUCT_PACKAGES += \
-    lineage.touch@1.0-service.RMX2170
+    xperience.touch@1.0-service.RMX2170

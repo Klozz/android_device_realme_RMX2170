@@ -16,9 +16,9 @@
 cc_binary {
     relative_install_path: "hw",
     defaults: ["hidl_defaults"],
-    name: "lineage.biometrics.fingerprint.inscreen@1.0-service.RMX2170",
-    init_rc: ["lineage.biometrics.fingerprint.inscreen@1.0-service.RMX2170.rc"],
-    vintf_fragments: ["lineage.biometrics.fingerprint.inscreen@1.0-service.RMX2170.xml"],
+    name: "xperience.biometrics.fingerprint.inscreen@1.0-service.RMX2170",
+    init_rc: ["xperience.biometrics.fingerprint.inscreen@1.0-service.RMX2170.rc"],
+    vintf_fragments: ["xperience.biometrics.fingerprint.inscreen@1.0-service.RMX2170.xml"],
     srcs: [
 	"service.cpp",
         "FingerprintInscreen.cpp",
@@ -29,7 +29,7 @@ cc_binary {
         "libhidlbase",
         "liblog",
         "libutils",
-        "vendor.lineage.biometrics.fingerprint.inscreen@1.0",
+        "vendor.xperience.biometrics.fingerprint.inscreen@1.0",
     ],
 }
 

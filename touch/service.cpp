@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "lineage.touch@1.0-service.RMX2170"
+#define LOG_TAG "xperience.touch@1.0-service.RMX2170"
 
 #include <android-base/logging.h>
 #include <binder/ProcessState.h>
 #include <hidl/HidlTransportSupport.h>
 #include "TouchscreenGesture.h"
 
-using ::vendor::lineage::touch::V1_0::ITouchscreenGesture;
-using ::vendor::lineage::touch::V1_0::implementation::TouchscreenGesture;
+using ::vendor::xperience::touch::V1_0::ITouchscreenGesture;
+using ::vendor::xperience::touch::V1_0::implementation::TouchscreenGesture;
 
 int main() {
     android::sp<ITouchscreenGesture> gestureService = new TouchscreenGesture();
